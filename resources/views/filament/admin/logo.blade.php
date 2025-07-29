@@ -1,0 +1,1 @@
+<img src="{{ asset('images/ikon_orygaya.svg') }}" alt="ORYGAYA Logo" class="h-10" />
