@@ -93,7 +93,7 @@
                             <input type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="transfer_proof" name="transfer_proof" required>
                         </div>
                         <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full mt-4" id="submit-button">
-                            {{ $total > 0 ? __('general.Complete Purchase') : __('Complete Order') }}
+                            {{ $total > 0 ? __('general.Complete Purchase') : __('general.Complete Order') }}
                         </button>
                     </form>
                 </div>

@@ -24,7 +24,8 @@ return new class extends Migration
             $table->string('status');
             $table->unsignedBigInteger('address_id')->nullable();
             $table->timestamps();
-            $table->foreign('address_id')->references('id')->on('addresses')->onDelete('set null');
+            $table->foreign('address_id')->references('id')->on('addresses')
+            ->onDelete('set null');
         });
     }
 

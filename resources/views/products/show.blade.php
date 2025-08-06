@@ -32,13 +32,13 @@
 
 
                     
-                    <div class="flex flex-wrap-mx-4 mt-4">
-                        <div class="w-full lg:w-4/6 px-4">
+                    <div class="flex flex-wrap -mx-4 mt-4">
+                        <div class="w-full lg:w-4/6 px-4 mb-4 lg:mb-0">
                             <h2 class="text-5xl font-bold text-gray-900 dark:text-white mb-10">Rp{{ number_format($product->price, 0, ',', '.') }}</h2>
                             <h4 class="text-gray-700"><strong>{{ __('general.Description:') }}</strong></h4>
                             {!! $product->description !!}
                         </div>
-                        <div class="lg:w-2/6 px-4 mt-4 lg:mt-0">
+                        <div class="w-full lg:w-2/6 px-4">
                             <div class="border border-gray-75 bg-gray-75 p-4 rounded-lg shadow-inner">
                                 <p><strong>{{ __('general.Category:') }}</strong> {{ $product->productCategory->name ?? 'N/A'}}</p>
                                 <p><strong>{{ __('general.Stock:') }}</strong> {{ $product->inventory_count }}</p>
