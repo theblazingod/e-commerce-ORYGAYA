@@ -290,4 +290,6 @@ return [
     'Your Wishlist is empty.' => 'Wishlist Anda kosong.',
     'Explore Products' => 'Jelajahi Produk',
     'Users' => 'Pengguna',
+    'Register here' => 'Daftar di sini',
+    'Don\'t have an account?' => 'Belum memiliki akun?',
 ];

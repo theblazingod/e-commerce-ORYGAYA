@@ -3,11 +3,11 @@
     <div class="bg-blue-600 text-white py-2">
         <div class="container mx-auto px-4 flex justify-between items-center">
             <div class="flex items-center space-x-4">
-                <a href="mailto:orygaya@gmail.com" class="text-sm hover:text-blue-200 flex items-center" target="_blank" rel="noopener noreferrer">
+                <a href="mailto:orygaya1999@gmail.com" class="text-sm hover:text-blue-200 flex items-center" target="_blank" rel="noopener noreferrer">
                     <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
-                    orygaya@gmail.com
+                    orygaya1999@gmail.com
                 </a>
                 <a href="https://wa.me/6281311002051" class="text-sm hover:text-blue-200 flex items-center" target="_blank" rel="noopener noreferrer">
                     <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
