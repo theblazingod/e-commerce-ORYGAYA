@@ -1,22 +1,22 @@
 <header class="bg-white shadow-md sticky top-0 z-50 w-full">
     <!-- Top Bar -->
-    <div class="bg-blue-600 text-white py-2">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <a href="mailto:orygaya@gmail.com" class="text-sm hover:text-blue-200 flex items-center" target="_blank" rel="noopener noreferrer">
-                    <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                    orygaya@gmail.com
-                </a>
-                <a href="https://wa.me/6281311002051" class="text-sm hover:text-blue-200 flex items-center" target="_blank" rel="noopener noreferrer">
-                    <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                    </svg>
-                    +62 813 1100 2051
-                </a>
-            </div>
-            <div class="flex items-center space-x-4">
+<div class="bg-blue-600 text-white py-2">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-start md:justify-between items-center gap-x-4 gap-y-2 text-sm">
+            <div class="flex items-center space-x-4 flex-wrap justify-end">
+            <a href="mailto:orygaya1999@gmail.com" class="hover:text-blue-200 flex items-center">
+                <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                    <span class="truncate max-w-[140px] min-w-0 overflow-hidden">orygaya1999@gmail.com</span>
+            </a>
+            <a href="https://wa.me/6281311002051" class="hover:text-blue-200 flex items-center">
+                <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+                +62 813 1100 2051
+            </a>
+        </div>
+            <div class="flex items-center space-x-4 flex-wrap">
                 @guest
                     <a href="{{ route('login') }}" class="text-sm hover:text-blue-200">{{__('general.Login')}}</a>
                     <a href="{{ route('register') }}" class="text-sm hover:text-blue-200">{{__('general.Register')}}</a>
@@ -47,14 +47,14 @@
 
     <!-- Main Navigation -->
     <div class="container mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
+        <div class="flex flex-col md:flex-row items-center justify-between">
             <!-- Logo -->
             <a href="{{ route('home') }}" class="flex-shrink-0">
                 <img src="{{ asset('images/ikon_orygaya.svg') }}" alt="ORYGAYA Logo" class="h-8">
             </a>
 
             <!-- Search Bar -->
-            <div class="hidden md:block flex-grow mx-8">
+            <div class="w-full md:flex-grow md:mx-8 mt-4 md:mt-0 order-2 md:order-none">
                 <form action="{{ route('products.index') }}" method="GET" class="flex">
                     <input type="text" name="search" placeholder="{{ __('general.Search products...') }}" class="w-full px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" value="{{ request('search') }}">
                     <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700 transition">
@@ -66,7 +66,7 @@
             </div>
 
             <!-- Navigation Icons -->
-            <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-6 order-3 md:order-none">
 
                 <a href="{{ route('wishlist.index') }}" class="text-gray-600 hover:text-blue-600 relative">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

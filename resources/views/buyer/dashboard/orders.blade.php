@@ -74,7 +74,7 @@
                                 <td class="py-3 px-6 text-left">Rp{{ number_format($order->total_amount, 2) }}</td>
                                 <td class="py-3 px-6 text-left"><span class="px-3 py-1 uppercase leading-tight rounded-full text-xs font-semibold {{ $order->status == 'pending' ? 'bg-yellow-200 text-yellow-600' : ($order->status == 'completed' ? 'bg-green-200 text-green-600' : 'bg-gray-200 text-gray-600') }}">{{ __('general.' . ucfirst($order->status)) }}</span></td>
                                 <td class="py-3 px-6 text-center">
-                                    <a href="{{ route('buyer.dashboard.orders.show', $order->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-xs">{{ __('general.View Details') }}</a>
+                                    <a href="{{ route('buyer.dashboard.orders.show', $order->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-xs">{{ __('general.Details') }}</a>
                                 </td>
                             </tr>
                             @endforeach

@@ -3,7 +3,7 @@
     <div id="address-suggestions" style="display: none;">
         <ul>
             <template x-for="address in addresses" :key="address">
-                <li @click="selectAddress(address)"><x-text x-text="address"></li>
+                <li @click="selectAddress(address)"><span x-text="address"></span></li>
             </template>
         </ul>
     </div>

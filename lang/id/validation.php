@@ -52,4 +52,5 @@ return [
     'uploaded' => 'atribut gagal diunggah.',
     'uuid' => 'atribut harus berupa UUID yang valid.',
     'confirmed' => 'Konfirmasi atribut tidak cocok.',
+    'min.string' => 'atribut harus memiliki minimal :min karakter.',
 ];

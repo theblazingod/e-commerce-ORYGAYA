@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->id();
-            $table->foreignId('order_id')->constrained('orders', 'id')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('order_id')->constrained('orders', 'id')->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->integer('quantity');
             $table->decimal('price', 10, 2);
             $table->nullableMorphs('orderable');

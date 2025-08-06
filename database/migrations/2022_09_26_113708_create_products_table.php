@@ -19,7 +19,8 @@ return new class extends Migration
                 $table->string('name');
                 $table->decimal('price', 10, 2);
                 $table->text('description')->nullable();
-                $table->foreignId('category_id')->nullable()->constrained('product_categories')->onUpdate('cascade')->onDelete('set null');
+                $table->foreignId('category_id')->nullable()->constrained('product_categories')
+                ->onUpdate('cascade')->onDelete('set null');
                 $table->boolean('is_variable')->default(0);
                 $table->boolean('is_featured')->default(0);
                 $table->string('product_image');

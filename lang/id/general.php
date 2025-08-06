@@ -109,7 +109,7 @@ return [
     'Min Price' => 'Harga Min',
     'Max Price' => 'Harga Maks',
     'Search' => 'Cari',
-    'View Details' => 'Lihat Detail',
+    'Details' => 'Detail',
     'No products found matching your criteria.' => 'Tidak ada produk yang ditemukan sesuai kriteria Anda.',
     'Remove from Wishlist' => 'Hapus dari Wishlist',
     'Add to Wishlist' => '+Wishlist',
@@ -215,6 +215,7 @@ return [
     'eBook' => 'eBook',
     'What\'s New' => 'Apa yang Baru',
     'Status' => 'Status',
+    'Complete Order' => 'Selesaikan Pesanan',
     'Your Addresses' => 'Alamat Anda',
     'You have no saved addresses.' => 'Anda belum menyimpan alamat apa pun.',
     'Add New Address' => 'Tambah Alamat Baru',
@@ -290,4 +291,6 @@ return [
     'Your Wishlist is empty.' => 'Wishlist Anda kosong.',
     'Explore Products' => 'Jelajahi Produk',
     'Users' => 'Pengguna',
+    'Register here' => 'Daftar di sini',
+    'Don\'t have an account?' => 'Belum memiliki akun?',
 ];

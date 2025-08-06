@@ -38,7 +38,7 @@
                         <h5 class="card-title">{{ $product->name }}</h5>
                         <p class="card-text">{{ Str::limit($product->description, 100) }}</p>
                         <p class="card-text"><strong>{{ __('general.Price:') }} Rp{{ number_format($product->price, 2) }}</strong></p>
-                        <a href="{{ route('products.show', $product->id) }}" class="btn btn-primary">{{ __('general.View Details') }}</a>
+                        <a href="{{ route('products.show', $product->id) }}" class="btn btn-primary">{{ __('general.Details') }}</a>
                     </div>
                 </div>
             </div>

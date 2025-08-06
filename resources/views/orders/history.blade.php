@@ -17,11 +17,10 @@
                             <p class="font-semibold">{{ __('general.Order ID:') }} <span class="font-normal">{{ $order->id }}</span></p>
                             <p class="font-semibold">{{ __('general.Date:') }} <span class="font-normal">{{ $order->created_at->format('Y-m-d H:i') }}</span></p>
                         </div>
-                        <div class="w-full md:w-1/2 text-right">
+                        <div class="w-full md:w-1/2 text-center md:text-right mt-2 md:mt-0">
                             <p class="font-semibold">{{ __('general.Total Amount:') }} <span class="font-normal">Rp{{ number_format($order->total_amount, 2) }}</span></p>
-                            <p class="font-semibold">{{ __('general.Status:') }} <span class="font-normal">{{ ucfirst($order->status) }}</span></p>
-
-                            <a href="{{ route('orders.show', $order->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 inline-block">{{ __('general.View Details') }}</a>
+                            <p class="font-semibold mb-2">{{ __('general.Status:') }} <span class="font-normal">{{ ucfirst($order->status) }}</span></p>
+                            <a href="{{ route('orders.show', $order->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline mt-2 block md:inline-block">{{ __('general.Details') }}</a>
                         </div>
                     </div>
                 @endforeach
