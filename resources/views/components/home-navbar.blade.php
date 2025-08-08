@@ -17,7 +17,6 @@
             </a>
         </div>
             <div class="flex items-center space-x-4 flex-wrap">
->>>>>>> 89dc37abd36f53f79171dd4346d0de973f5eb7cb
                 @guest
                     <a href="{{ route('login') }}" class="text-sm hover:text-blue-200">{{__('general.Login')}}</a>
                     <a href="{{ route('register') }}" class="text-sm hover:text-blue-200">{{__('general.Register')}}</a>

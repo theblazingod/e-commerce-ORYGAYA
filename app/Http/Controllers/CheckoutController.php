@@ -57,7 +57,6 @@ class CheckoutController extends Controller
 
     public function processCheckout(Request $request)
     {
-<<<<<<< HEAD
 	$cart = Session::get('cart', []);
 
 	if (empty($cart)) {
@@ -69,19 +68,6 @@ class CheckoutController extends Controller
 	$totalAmount = collect($cart)->sum(function($item) {
 	    return $item['price'] * $item['quantity'];
 	});
-=======
-        $cart = Session::get('cart', []);
-        
-        if (empty($cart)) {
-            return redirect()->route('products.index')
-                ->with('error', __('general.cart_empty'));
-        }
-
-        // Calculate total amount
-        $totalAmount = collect($cart)->sum(function($item) {
-            return $item['price'] * $item['quantity'];
-        });
->>>>>>> 89dc37abd36f53f79171dd4346d0de973f5eb7cb
 
         $rules = [
             'email' => ['required', 'email'],
@@ -121,23 +107,13 @@ class CheckoutController extends Controller
                 ->withInput();
         }
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 89dc37abd36f53f79171dd4346d0de973f5eb7cb
         // Verify inventory before processing
         foreach ($cart as $productId => $item) {
             $product = Product::find($productId);
             if (!$product || $product->inventory_count < $item['quantity']) {
                 return redirect()->back()->with('error', __('general.items_not_available'));
             }
-<<<<<<< HEAD
-       }
-=======
-        }
->>>>>>> 89dc37abd36f53f79171dd4346d0de973f5eb7cb
-
+	}
         // Create order
         if (!Auth::check()) {
             return redirect()->route('login')->with('error', __('general.login_required_for_checkout'));
@@ -201,32 +177,6 @@ class CheckoutController extends Controller
 
 	// For manual transfer, the order status remains 'pending' until admin verification.
 	// No external API payment processing is needed here.
-
-<<<<<<< HEAD
-	if ($totalAmount == 0) {
-		$order->update(['status' => 'completed']);
-	} else {
-		// For manual transfer, the order status remains 'pending' until admin verification.
-		// No external API payment processing is  needed here.
-		$order->update(['status' => 'pending']);
-	}
-	
-	// Create order items and update inventory
-	foreach ($cart as $productId => $item) {
-	$product = Product::find($productId);
-=======
-        if ($totalAmount == 0) {
-            $order->update(['status' => 'completed']);
-        } else {
-            // For manual transfer, the order status remains 'pending' until admin verification.
-            // No external API payment processing is needed here.
-            $order->update(['status' => 'pending']);
-        }
-
-        // Create order items and update inventory
-        foreach ($cart as $productId => $item) {
-            $product = Product::find($productId);
->>>>>>> 89dc37abd36f53f79171dd4346d0de973f5eb7cb
             if ($product) {
                 $order->orderItems()->create([
                     'quantity' => $item['quantity'],
@@ -236,7 +186,6 @@ class CheckoutController extends Controller
                 ]);
 
             }
-        }
 
         // Clear cart
         Session::forget('cart');
