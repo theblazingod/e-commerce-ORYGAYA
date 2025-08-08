@@ -3,8 +3,8 @@
 @section('content')
     <div class="container mx-auto px-4 my-4">
         <div class="flex justify-between items-center mb-4">
-            <div class="flex items-center space-x-4">
-                <!-- Sorting dropdown -->
+            <!-- Filter and Sort for larger screens -->
+            <div class="hidden md:flex items-center space-x-4">
                 <form method="GET" action="{{ route('products.index') }}" class="flex items-center space-x-4">
                     @foreach(request()->except(['category', 'sort', 'page']) as $key => $value)
                         @if(is_array($value))
@@ -35,6 +35,47 @@
                 </form>
                 <div>
                     <a href="{{ route('products.index') }}" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300">{{ __('general.Reset Filter') }}</a>
+                </div>
+            </div>
+
+            <!-- Filter and Sort for mobile screens -->
+            <div class="md:hidden w-full" x-data="{ open: false }">
+                <button @click="open = !open" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md flex justify-between items-center">
+                    <span>{{ __('general.Filter & Sort') }}</span>
+                    <svg x-show="!open" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    <svg x-show="open" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+                </button>
+
+                <div x-show="open" @click.away="open = false" class="mt-4 space-y-4">
+                    <form method="GET" action="{{ route('products.index') }}" class="space-y-4">
+                        @foreach(request()->except(['category', 'sort', 'page']) as $key => $value)
+                            @if(is_array($value))
+                                @foreach($value as $item)
+                                    <input type="hidden" name="{{ $key }}[]" value="{{ $item }}">
+                                @endforeach
+                            @else
+                                <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+                            @endif
+                        @endforeach
+
+                        <select name="category" class="w-full border border-gray-300 rounded-md p-2" onchange="this.form.submit()">
+                            <option value="">{{ __('general.Filter by Category') }}</option>
+                            @foreach($categories as $category)
+                                <option value="{{ $category->slug }}" {{ request('category') == $category->slug ? 'selected' : '' }}>{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+
+                        <select name="sort" class="w-full border border-gray-300 rounded-md p-2" onchange="this.form.submit()">
+                            <option value="">{{ __('general.Sort by') }}</option>
+                            <option value="price" {{ request('sort') == 'price' ? 'selected' : '' }}>{{ __('general.Price: Low to High') }}
+                            </option>
+                            <option value="-price" {{ request('sort') == '-price' ? 'selected' : '' }}>{{ __('general.Price: High to Low') }}
+                            </option>
+                            <option value="name" {{ request('sort') == 'name' ? 'selected' : '' }}>{{ __('general.Name: A to Z') }}</option>
+                            <option value="-name" {{ request('sort') == '-name' ? 'selected' : '' }}>{{ __('general.Name: Z to A') }}</option>
+                        </select>
+                        <a href="{{ route('products.index') }}" class="block w-full text-center bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300">{{ __('general.Reset Filter') }}</a>
+                    </form>
                 </div>
             </div>
         </div>

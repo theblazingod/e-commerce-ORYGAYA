@@ -2,6 +2,7 @@
 
 return [
     'Order' => 'Pesanan',
+    'Filter & Sort' => 'Filter & Urutkan',
     'Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.' =>'Lupa kata sandi? Tidak masalah. Hanya beri tahu kami alamat email Anda, kami akan mengirimkan tautan reset kata sandi yang akan memungkinkan Anda memilih kata sandi baru.',
     'Email Password Reset Link' => 'Kirim tautan reset',
     'Reset Password' => 'Reset',
