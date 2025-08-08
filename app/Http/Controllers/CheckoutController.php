@@ -113,12 +113,7 @@ class CheckoutController extends Controller
             if (!$product || $product->inventory_count < $item['quantity']) {
                 return redirect()->back()->with('error', __('general.items_not_available'));
             }
-<<<<<<< HEAD
        }
-=======
-        }
->>>>>>> 89dc37abd36f53f79171dd4346d0de973f5eb7cb
-
         // Create order
         if (!Auth::check()) {
             return redirect()->route('login')->with('error', __('general.login_required_for_checkout'));
@@ -183,7 +178,6 @@ class CheckoutController extends Controller
 	// For manual transfer, the order status remains 'pending' until admin verification.
 	// No external API payment processing is needed here.
 
-<<<<<<< HEAD
 	if ($totalAmount == 0) {
 		$order->update(['status' => 'completed']);
 	} else {
@@ -195,19 +189,6 @@ class CheckoutController extends Controller
 	// Create order items and update inventory
 	foreach ($cart as $productId => $item) {
 	$product = Product::find($productId);
-=======
-        if ($totalAmount == 0) {
-            $order->update(['status' => 'completed']);
-        } else {
-            // For manual transfer, the order status remains 'pending' until admin verification.
-            // No external API payment processing is needed here.
-            $order->update(['status' => 'pending']);
-        }
-
-        // Create order items and update inventory
-        foreach ($cart as $productId => $item) {
-            $product = Product::find($productId);
->>>>>>> 89dc37abd36f53f79171dd4346d0de973f5eb7cb
             if ($product) {
                 $order->orderItems()->create([
                     'quantity' => $item['quantity'],
@@ -220,7 +201,7 @@ class CheckoutController extends Controller
 
         // Clear cart
         Session::forget('cart');
-        
+    }
         return redirect()->route('checkout.confirmation', ['order' => $order->id])
             ->with('success', __('general.order_placed_successfully'));
     }

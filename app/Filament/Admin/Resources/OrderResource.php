@@ -88,34 +88,34 @@ class OrderResource extends Resource
                     ])
                     ->required(),
 
-                // Forms\Components\Section::make('Alamat')
-                //     ->relationship('address')
-                //     ->schema([
-                //         Forms\Components\TextInput::make('address_line_1')
-                //             ->label(__('general.Address Line 1'))
-                //             ->required()
-                //             ->maxLength(255),
-                //         Forms\Components\TextInput::make('address_line_2')
-                //             ->label(__('general.Address Line 2 (Optional)'))
-                //             ->maxLength(255),
-                //         Forms\Components\TextInput::make('city')
-                //             ->label(__('general.City'))
-                //             ->required()
-                //             ->maxLength(255),
-                //         Forms\Components\TextInput::make('state')
-                //             ->label(__('general.Province'))
-                //             ->required()
-                //             ->maxLength(255),
-                //         Forms\Components\TextInput::make('postal_code')
-                //             ->label(__('general.Postal Code'))
-                //             ->required()
-                //             ->maxLength(255),
-                //         Forms\Components\TextInput::make('phone_number')
-                //             ->label(__('general.Phone Number'))
-                //             ->maxLength(255)
-                //             ->nullable(),
+                Forms\Components\Section::make('Alamat')
+                    ->relationship('address')
+                    ->schema([
+                        Forms\Components\TextInput::make('address_line_1')
+                            ->label(__('Alamat Baris 1'))
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('address_line_2')
+                            ->label(__('Alamat Baris 2 (opsional)'))
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('city')
+                            ->label(__('Kota'))
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('state')
+                            ->label(__('Provinsi'))
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('postal_code')
+                            ->label(__('Kode Pos'))
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('phone_number')
+                            ->label(__('No. Telepon'))
+                            ->maxLength(255)
+                            ->nullable(),
 
-                //     ])->columns(2),
+                    ])->columns(2),
 
                 Forms\Components\Section::make('Pesanan')
                     ->schema([
